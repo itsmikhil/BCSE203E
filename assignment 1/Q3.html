@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        header{
+            text-align: center;
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow-x: hidden;
+            background-color: burlywood;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        nav{
+            width: 100%;
+            background-color:rgba(3, 122, 3, 0.47);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0rem;
+            font-size: 1.25rem;
+        }
+        nav a{
+            text-decoration:none;
+            color: black;
+        }
+        .container{
+           display: flex; 
+           /* background-color: red; */
+           padding: 0 2rem 0 4rem;
+           /* gap: 15rem; */
+           justify-content: space-between;
+            width: 100%;
+        }
+        .main{
+            width: 50%;
+            /* background-color: blue; */
+        }
+        .sidebar{
+            width: 30%;
+            /* background-color: red; */
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .summary{
+            border: 1px solid black;
+            padding: 1rem;
+        }
+        .summary h4{
+            text-decoration: underline;
+            color: rgba(0, 0, 255, 0.285);
+            cursor: pointer;
+            justify-content: right;
+        }
+        aside{
+            align-self: self-end;
+        }
+        footer{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="">Home</a>
+      <a href="Tutorials">Tutorials</a>
+      <a href="Reviews">Reviews</a>
+      <a href="Contact">Contact</a>
+    </nav>
+    <header>
+      <h1>Block Chain</h1>
+      <h3>Growing Field</h3>
+    </header>
+    <section class="container">
+      <article class="main">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem
+          maiores impedit molestiae? Libero similique labore provident quaerat
+          quos voluptatum sit facilis adipisci ea, sed consequuntur ipsum
+          tempora officiis beatae.\
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum dicta
+          minus reprehenderit quisquam nobis iure nesciunt temporibus eum unde
+          impedit!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+          molestias, quisquam modi vel et similique deserunt non consequuntur
+          quae quos? Laudantium sit earum quasi corporis libero fuga incidunt
+          maxime eos et necessitatibus ullam praesentium nemo, iure ipsam
+          nesciunt eum impedit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+          molestias, quisquam modi vel et similique deserunt non consequuntur
+          quae quos? Laudantium sit earum quasi corporis libero fuga incidunt
+          maxime eos et necessita
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+          molestias, quisquam modi vel et similique deserunt non consequuntur
+          quae quos? Laudantium sit earum quasi corporis libero fuga incidunt
+          maxime eos et necessita
+        </p>
+      </article>
+      <section class="sidebar">
+        <article class="summary">
+          <h4>Cloud computing</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+            quaerat cumque accusantium facilis nesciunt optio ut architecto
+            autem iste doloremque.
+          </p>
+        </article>
+        <article class="summary">
+          <h4>Crypto Technology</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+            quaerat cumque accusantium facilis nesciunt optio ut architecto
+            autem iste doloremque.
+          </p>
+        </article>
+        <aside>
+            <h5>
+                Written by: <p>johnDoe@gmail.com</p>
+            </h5>
+            <h5>
+                published by: <p>techNews.com</p>
+            </h5>
+        </aside>
+      </section>
+    </section>
+    <footer>
+        <p>&copy; reserved by Tech News 2025</p>
+        <p>&trade; rights to techNews.co</p>
+    </footer>
+  </body>
+</html>
