@@ -1,0 +1,63 @@
+body{
+    background-color: #8f935e;
+    font-family:'Courier New', Courier, monospace;
+}
+span{
+    font-weight: 800;
+}
+#main-title{
+    text-align: center;
+}
+.heading{
+    text-align: center;
+}
+.projects,.faculties,.news-container{
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap: 1rem;
+}
+.card{
+    /* border: 1px solid red; */
+    box-shadow: 5px 1px 1px greenyellow;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem 0rem;
+    background-color: blue;
+}
+#card{
+    background-color: purple;
+}
+.card h3{
+    margin: 0;
+}
+.card p{
+    width: 75%;
+    text-align: center;
+    margin: 0;
+    line-height: 0.9rem;
+}
+.card img{
+    height: 3rem;
+    width: 4rem;
+    justify-self: flex-start;
+}
+
+
+.news-container img{
+    height: 8rem;
+    width: 9rem;
+    object-fit: cover;
+}
+.news{
+    box-shadow: 5px 1px 1px greenyellow;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 2rem 0rem 0.5rem 0rem;
+    background-color: rgba(255, 166, 0, 0.482);
+}
