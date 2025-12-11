@@ -1,0 +1,121 @@
+body,html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Courier New', Courier, monospace;
+    max-width: 100%;
+    background-color: beige;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 0.5rem 4rem;
+    background-color: rgb(210, 210, 191);
+}
+nav img{
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
+    
+}
+.navOptions{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+}
+.navOptions p{
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.menu{
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+    padding: 2rem 10rem;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0rem;
+    border-radius: 1rem;
+}
+.item>p{
+    font-weight: 700;
+    color: white;
+    font-size: 1.2rem;
+    margin: 0;
+}
+.item img{
+    /* height: 10rem; */
+    width: 7rem;
+    object-fit: contain;
+    min-height: 8rem;
+}
+
+/* description */
+.item h3{
+    font-weight: normal;
+    text-align: center;
+    line-height: 1rem;
+}
+.spice{
+    width: 70%;
+    height: 1rem;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+.lvl{
+    background-color: red;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+    transform: translateX(-30%);
+    z-index: 1;
+}
+.spice p{
+    position: absolute;
+    top: 0px;
+    margin: 0 auto;
+    left: 40%;
+    color: yellow;
+    z-index: 10;
+} 
+.veg{
+    background-color: #027543b9;
+}
+/* .veg img{
+    object-fit: cover;
+} */
+/* .special img{
+    object-fit: cover;
+} */
+.item button{
+    background-color: yellow;
+    color: black;
+    padding: 0.6rem 5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.non-veg{
+    background-color: rgba(255, 0, 0, 0.645);
+}
+.special{
+    background-color: rgba(255, 217, 0, 0.629);
+}
+.veg-item{
+    border: 1px solid black;
+    box-shadow: 1px 1px 3px yellow;
+    padding: 3px 5px;
+    font-weight: 600;
+}
