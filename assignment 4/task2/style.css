@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+.top,.bottom{
+    background-color: orange;
+}
+.top{   
+    text-align: left;
+}
+
+table{
+    border-spacing: 0;
+    background-color: rgb(10, 10, 71);
+}
+th{
+    padding: 5px;
+    font:normal
+}
+tr{
+    color: yellow;
+    text-align: right;
+}
+td{
+    padding: 8px 15px 8px 15px;
+}
+.submit{
+    background-color: rgba(0, 128, 0, 0.749);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+}
+.cancel{
+    background-color:rgba(255, 0, 0, 0.685);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+}
+.right{
+    text-align: left;
+}
+.bottom td{
+    text-align: right;
+}
+button{
+    margin-left: 3px;
+}
+.month{
+    padding-right: 30px;
+}
