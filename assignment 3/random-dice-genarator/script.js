@@ -13,7 +13,7 @@ let randomDiceGenerate = () => {
     img.setAttribute("src", `${generateRandomNumber()}.png`);
     body.appendChild(img);
   }else{
-    image.setAttribute("src", `${generateRandomNumber()}.png`);
+    image.setAttribute("src", `../assets/${generateRandomNumber()}.png`);
   }
 };
 
