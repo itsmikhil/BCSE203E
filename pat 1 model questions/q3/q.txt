@@ -1,0 +1,18 @@
+Write the CSS rules that visually recreate a frameset-style three-panel layout and apply advanced styling with proper cascading:
+•	Use CSS (Flexbox or Grid) on the main container to simulate:
+•	A top “row frame” for the header and global navigation.
+•	A three-column “frameset” below it: left panel (navigation), center panel (cuisine content), right panel (Chef’s Recommendation).
+•	Use:
+•	Class selectors for cuisine categories (e.g., .cuisine-indian, .cuisine-italian, .cuisine-asian) and food cards (e.g., .food-card).
+•	ID selectors for layout-critical regions (e.g., #top-header, #left-panel, #center-panel, #right-panel, #site-footer).
+•	Apply:
+•	Color properties to visually distinguish each cuisine category in the center panel while preserving consistent interaction patterns.
+•	Font-family, font-size, and line-height properties to improve readability in all three panels.
+•	Demonstrate cascading precedence explicitly in the code:
+•	Define base styles in an external stylesheet (e.g., styles.css).
+•	Override selected rules using an internal <style> block in the <head>.
+•	Override at least one property (e.g., font-size or color of a featured dish card) using an inline style attribute, showing that inline > internal > external.
+•	For each food item card (.food-card) in the center panel, add a hover effect that:
+•	Smoothly increases border thickness or changes border color.
+•	Transitions the background color to a lighter shade.
+•	Adds a slight 3D lifting effect using transform (for example, translateY(-4px) with a stronger box-shadow).

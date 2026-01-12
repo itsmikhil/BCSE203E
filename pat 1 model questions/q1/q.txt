@@ -1,0 +1,8 @@
+PAT-1 Model Question – Enterprise-Level HTML & CSS Design with Frameset-style Layout (15 Marks)
+A multinational food-tech company “CuisineCloud” is rebuilding its legacy cloud-kitchen dashboard, which was originally implemented using an HTML <frameset> layout. The new version must visually preserve the old three-panel “framed” layout while using HTML5 semantic elements and CSS-based layout techniques instead of the obsolete <frameset> tag. Each cuisine category must behave as an independent content unit and appear in the main content area, while navigation and recommendations are shown in side panels.
+The legacy layout is conceptually divided as:
+•	Top horizontal frame: Company branding and navigation.
+•	Left vertical frame: High-level cuisine navigation shortcuts.
+•	Center frame: Cuisine sections and food item cards.
+•	Right vertical frame: Chef’s recommendations.
+The new design must simulate this multi-frame layout using modern HTML5 and CSS (e.g., CSS Grid or Flexbox) and then present the final output as a single integrated figure of the rendered page.

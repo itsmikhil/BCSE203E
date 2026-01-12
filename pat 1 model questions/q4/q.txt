@@ -1,0 +1,4 @@
+Explain and demonstrate, using CSS, how the box model is applied to the food item cards in the central “frame”:
+•	Show how padding is used inside each .food-card to create comfortable internal spacing between the border and the content (dish name, description, price).
+•	Show how margin or layout gaps are used to control the distance between adjacent cards so they do not visually collide.
+•	Show how a border is used to define the boundaries of each card and help separate it from the coloured background of its cuisine section.

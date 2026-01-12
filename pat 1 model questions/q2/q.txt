@@ -1,0 +1,15 @@
+Design the HTML structure of the GastroGrid web page without using <frameset>, but logically preserving the old framed layout, under these constraints:
+•	Use <header> at the top “frame” to display:
+•	Company name.
+•	A tagline using an emphasis-related text element (e.g., <em>).
+•	Create a global <nav> bar inside or directly under the header with anchor links that scroll to each cuisine category within the same page (e.g., #indian, #italian, #asian).
+•	Use a main layout container (e.g., <main>) that is visually divided into three “frame-like” regions using semantic elements:
+•	A left navigation panel (e.g., <nav> or <aside>) containing a vertical list of cuisine shortcuts.
+•	A central content area using <section> elements, where each cuisine category is a <section> and each food item inside it is an <article>.
+•	A right recommendation panel using <aside> that highlights “Chef’s Recommendation” with at least two dishes.
+•	Each food item <article> must include:
+•	Dish name using a heading element.
+•	Short description using <p>.
+•	Price using an appropriate text element (e.g., <span> or <p> with a class).
+•	Use <footer> at the bottom to display copyright information.
+Marks are awarded for correct use of semantic elements, logical nesting, and a layout that clearly resembles a multi-frame structure while remaining HTML5-compliant.
