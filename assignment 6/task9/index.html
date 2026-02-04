@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .ans{
+            width: 50%;
+        }
+    </style>
+  </head>
+  <body>
+    <input type="text" class="ans" />
+    <script>
+      let ans = "Words containing b:- ";
+      let box=document.querySelector(".ans")
+      for (let i = 0; i < 10; i++) {
+        let word = window.prompt(`Enter ${i}th word`);
+        if(word.includes('b') || word.includes('B')){
+            ans+=word;
+            ans+=" ";
+        }
+        box.value=ans;
+      }
+    </script>
+  </body>
+</html>
