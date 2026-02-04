@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="field1">
+    <input type="text" class="field2" disabled>
+    <input type="text" class="field3" disabled>
+    <script>
+        let field1=document.querySelector(".field1");
+        let field2=document.querySelector(".field2");
+        let field3=document.querySelector(".field3");
+        setInterval(
+            ()=>{if(field1.value!=""){
+                field2.value=2*Number(field1.value);
+                field3.value=Number(field1.value)*Number(field1.value);
+            }}
+            ,100
+        );
+    </script>
+</body>
+</html>
