@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Find Word with 'ha'</title>
+  </head>
+  <body>
+    <script>
+      let words = [];
+      let result = [];
+
+      for (let i = 0; i < 5; i++) {
+        let word = prompt("Enter word " + (i + 1) + ":");
+        words.push(word);
+      }
+
+      for (let i = 0; i < words.length; i++) {
+        if (words[i].includes("ha")) {
+          result.push(words[i]);
+        }
+      }
+
+      if (result.length > 0) {
+        document.write("Word(s) containing 'ha' : <br>");
+        for (let i = 0; i < result.length; i++) {
+          document.write(result[i] + "<br>");
+        }
+      } else {
+        document.write("No word contains 'ha'");
+      }
+    </script>
+  </body>
+</html>

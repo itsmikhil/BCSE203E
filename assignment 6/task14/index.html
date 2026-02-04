@@ -6,35 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" class="box1">
-    <button class="btn1">Send data to second box</button>
-    <input type="text" class="box2">
-    <button class="btn2">Send data to first box</button>
+    Color Input:-
+    <input type="color" name="" id="">
     <script>
-        let box1=document.querySelector(".box1")
-        let box2=document.querySelector(".box2")
-        let btn1=document.querySelector(".btn1")
-        let btn2=document.querySelector(".btn2")
+        let colorInput=document.querySelector("input");
+        let body=document.querySelector("body");
+        setInterval(()=>body.style.backgroundColor=colorInput.value,100)
         
-        let sendData=(el)=>{
-            if(el=="second" && box1.value!=""){
-                if(box1.value.split(" ")[0][0]>='a' && box1.value.split(" ")[0][0]<='z'){
-                    box2.value=box1.value.toUpperCase();
-                }else{
-                    box2.value=box1.value.toLowerCase();
-                }
-            }else if(el=="first" && box2.value!=""){
-                if(box2.value.split(" ")[0][0]>='a' && box2.value.split(" ")[0][0]<='z'){
-                    box1.value=box2.value.toUpperCase();
-                }else{
-                    box1.value=box2.value.toLowerCase();
-                }
-            }
-        }
-
-        btn1.addEventListener("click",()=>sendData("second"));
-        btn2.addEventListener("click",()=>sendData("first"));
-
     </script>
 </body>
 </html>
