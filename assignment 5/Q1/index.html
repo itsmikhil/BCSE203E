@@ -1,17 +1,23 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script>
-     let name = prompt("Enter your name:");
-    if (name !== null && name !== "") {
-        document.write("Hello, " + name + "! Welcome to JavaScript.");
-    } else {
-        document.write("Hello! Welcome to JavaScript.");
-    }
-    </script>
-  </head>
-  <body></body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Date and Time</title>
+</head>
+
+<body>
+
+<h2>Display Date and Time</h2>
+
+<button onclick="displayDate()">The time is?</button>
+
+<p id="demo"></p>
+
+<script>
+function displayDate() {
+    let currentDate = new Date();
+    document.getElementById("demo").innerHTML = currentDate;
+}
+</script>
+
+</body>
 </html>

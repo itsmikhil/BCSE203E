@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Registration Form</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid black;
+            padding: 20px;
+            width: 300px;
+        }
+
+        input, button {
+            margin: 5px 0;
+        }
+
+        .gender-group {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form class="form-container">
+        <label class="group-label">Personal Information</label>
+        <input class="name" type="text" placeholder="Full Name" required>
+        
+        <input class="email" type="email" placeholder="Email Address" required>
+        
+        <input class="phone" type="number" placeholder="Phone Number">
+
+        <label class="group-label">Gender</label>
+        <div class="gender-group">
+            <div class="gender-option">
+                <input id="male" type="radio" name="gender" class="gender" value="Male" checked>
+                <label for="male">Male</label>
+            </div>
+            <div class="gender-option">
+                <input id="female" type="radio" name="gender" class="gender" value="Female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+
+        <label class="group-label">Additional Details</label>
+        <input type="text" name="country" class="country" placeholder="Country">
+        
+        <input type="text" name="comment" class="comment" placeholder="Leave a comment...">
+
+        <button type="submit">Submit</button>
+        <script src="script.js"></script>
+    </form>
+
+</body>
+</html>
