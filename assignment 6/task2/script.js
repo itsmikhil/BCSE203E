@@ -6,7 +6,6 @@ let displayTime=()=>{
     let mins=now.getMinutes();
     textBox.innerHTML= `Current time is ${hrs}:${mins}`;
     console.log("refresh");
-    
 }
 displayTime();
 setInterval(displayTime, 60000);

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select class="firstNum" name="firstNum" id="">
+      <option selected disabled value="">First Number</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+
+    <select class="op" name="op" id="">
+      <option selected disabled value="">Operator</option>
+      <option value="*">*</option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="/">/</option>
+    </select>
+
+    <select class="secondNum" name="secondNum" id="">
+      <option selected disabled value="">Second Number</option>
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
+    <button>Find</button>
+    <input type="text" class="ans" />
+    <script>
+      let num1 = document.querySelector(".firstNum");
+      let num2 = document.querySelector(".secondNum");
+      let op = document.querySelector(".op");
+      let btn = document.querySelector("button");
+      let ansBox=document.querySelector(".ans");
+      let ans=0;
+      let findAns = () => {
+        if(num1.value=="" || num2.value==""){
+            window.alert("Please select both numbers");
+            return;
+        }
+        let val1=Number(num1.value);
+        let val2=Number(num2.value);
+        switch(op.value){
+            case '+':
+                ans=val1+val2;
+                break;
+            case '-':
+                ans=val1-val2;
+                break;
+            case '*':
+                ans=val1*val2;
+                break;
+            case '/':
+                ans=val1/val2;
+                break;
+            default:
+                ans=99999;
+        }
+        if(ans!=99999){
+            ansBox.value=ans;
+        }else{
+            window.alert("Select a operator");
+        }
+        
+      };
+      btn.addEventListener("click", findAns);
+    </script>
+  </body>
+</html>
