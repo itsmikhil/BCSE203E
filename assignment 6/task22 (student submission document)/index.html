@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Event Handlers</title>
+  </head>
+  <script>
+    function inform() {
+      alert(
+        "You have activated me by clicking the grey button! Note that the event handler is added within the event that it handles, in this case, the form button event tag",
+      );
+    }
+  </script>
+
+  <form>
+    <input type="button" name="test" value="Click me" onclick="inform()" />
+  </form>
+  <body onload="alert('This page has finished loading!')">
+    Welcome to my page
+    <h1 onmouseover="style.color = 'red'" onmouseout="style.color = 'blue'">
+      This is mouse event handlers
+    </h1>
+  </body>
+</html>
