@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Program</title>
+
+    <script>
+        // Function to store value in cookie
+        function setCookie() {
+
+            // Ask user for value
+            var value = prompt("Enter a value to store in cookie:");
+
+            if (value == "" || value == null) {
+                alert("Please enter a valid value!");
+                return;
+            }
+
+            // Create expiry time (1 hour from now)
+            var date = new Date();
+            date.setTime(date.getTime() + (60 * 60 * 1000)); // 1 hour
+
+            // Convert date to UTC format
+            var expires = "expires=" + date.toUTCString();
+
+            // Store cookie
+            document.cookie = "userValue=" + value + ";" + expires + ";path=/";
+
+            alert("Value stored successfully in cookie!");
+        }
+
+        // Function to read cookie
+        function getCookie() {
+
+            var name = "userValue=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookies = decodedCookie.split(';');
+
+            for (var i = 0; i < cookies.length; i++) {
+
+                var c = cookies[i].trim();
+
+                if (c.indexOf(name) == 0) {
+                    var value = c.substring(name.length, c.length);
+                    alert("Stored Value: " + value);
+                    return;
+                }
+            }
+
+            alert("No cookie found or cookie expired!");
+        }
+    </script>
+</head>
+
+<body>
+
+    <center>
+        <h2>Cookie Example</h2>
+
+        <button onclick="setCookie()">Store Value</button>
+
+        <br><br>
+
+        <button onclick="getCookie()">Show Value</button>
+    </center>
+
+</body>
+</html>
