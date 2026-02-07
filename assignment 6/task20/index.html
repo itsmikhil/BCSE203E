@@ -5,22 +5,15 @@
     <title>Smart Library Portal</title>
 
     <script>
-        /* Page Load Event */
         function pageLoaded() {
             alert("Library Portal has loaded successfully!");
         }
-
-        /* Button Click Event */
         function showHelp() {
             alert("For help, contact the librarian or visit the Help Desk.");
         }
-
-        /* Mouse Over Event */
         function changeColor() {
             document.getElementById("heading").style.color = "blue";
         }
-
-        /* Mouse Out Event */
         function resetColor() {
             document.getElementById("heading").style.color = "black";
         }
@@ -28,18 +21,13 @@
 </head>
 
 <body onload="pageLoaded()">
-
     <center>
-        <!-- Heading with Mouse Events -->
         <h1 id="heading"
             onmouseover="changeColor()"
             onmouseout="resetColor()">
             Library Rules & Guidelines
         </h1>
-
         <br><br>
-
-        <!-- Help Button -->
         <button onclick="showHelp()">
             Help
         </button>
