@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const colors = [];
+
+      const main = document.createElement("div");
+      main.style.display = "flex";
+      main.style.gap = "10px";
+      document.body.appendChild(main);
+
+      const left = document.createElement("div");
+      left.style.width = "200px";
+      main.appendChild(left);
+
+      const right = document.createElement("div");
+      main.appendChild(right);
+
+      const input = document.createElement("input");
+      input.type = "color";
+      right.appendChild(input);
+
+      const saveBtn = document.createElement("button");
+      saveBtn.textContent = "Save Color";
+      left.appendChild(saveBtn);
+
+      const listBtn = document.createElement("button");
+      listBtn.textContent = "List Saved Colors";
+      left.appendChild(listBtn);
+
+      const output = document.createElement("div");
+      left.appendChild(output);
+
+      input.oninput = function () {
+        document.body.style.backgroundColor = this.value;
+      };
+
+      saveBtn.onclick = function () {
+        const value = input.value;
+        colors.push(value);
+
+        const btn = document.createElement("button");
+        btn.textContent = value;
+        btn.style.backgroundColor = value;
+        btn.style.color = "#fff";
+        btn.style.display = "block";
+        btn.style.margin = "4px 0";
+
+        btn.onclick = function () {
+          document.body.style.backgroundColor = value;
+        };
+
+        left.appendChild(btn);
+      };
+
+      listBtn.onclick = function () {
+        output.innerHTML = "";
+        colors.forEach((color) => {
+          const el = document.createElement("div");
+          el.textContent = color;
+          el.style.backgroundColor = color;
+          el.style.color = "#fff";
+          el.style.margin = "4px 0";
+          el.style.cursor = "pointer";
+
+          el.onclick = function () {
+            this.remove();
+          };
+
+          output.appendChild(el);
+        });
+      };
+    </script>
+  </body>
+</html>
