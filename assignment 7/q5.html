@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const data = ["Hello", "Bonjour", "Hola", "Svekis"];
+
+const slider = document.createElement("div");
+slider.style.width = "600px";
+slider.style.height = "300px";
+slider.style.background = "blue";
+slider.style.color = "white";
+slider.style.display = "flex";
+slider.style.flexDirection = "column";
+slider.style.alignItems = "center";
+slider.style.justifyContent = "center";
+slider.style.fontFamily = "serif";
+slider.style.position = "relative";
+document.body.appendChild(slider);
+
+data.forEach((text, index) => {
+  const slide = document.createElement("div");
+  slide.style.display = "none";
+  slide.style.textAlign = "center";
+  slide.className = "slide";
+
+  const small = document.createElement("div");
+  small.textContent = `slide ${index + 1}`;
+  small.style.fontSize = "18px";
+
+  const big = document.createElement("div");
+  big.textContent = text;
+  big.style.fontSize = "36px";
+  big.style.marginTop = "10px";
+
+  slide.appendChild(small);
+  slide.appendChild(big);
+
+  if (index === 0) {
+    slide.classList.add("active");
+    slide.style.display = "block";
+  }
+
+  slider.appendChild(slide);
+});
+
+const prev = document.createElement("button");
+prev.textContent = "< Prev";
+prev.style.position = "absolute";
+prev.style.left = "20px";
+prev.style.bottom = "20px";
+styleBtn(prev);
+slider.appendChild(prev);
+
+const next = document.createElement("button");
+next.textContent = "Next >";
+next.style.position = "absolute";
+next.style.right = "20px";
+next.style.bottom = "20px";
+styleBtn(next);
+slider.appendChild(next);
+
+function styleBtn(btn) {
+  btn.style.background = "darkblue";
+  btn.style.color = "white";
+  btn.style.border = "none";
+  btn.style.padding = "10px 16px";
+  btn.style.borderRadius = "10px";
+  btn.style.cursor = "pointer";
+}
+
+function mover(direction) {
+  const current = slider.querySelector(".active");
+  let target;
+
+  if (direction === "next") {
+    target = current.nextElementSibling || slider.firstElementChild;
+  } else {
+    target = current.previousElementSibling || slider.lastElementChild;
+  }
+
+  current.classList.remove("active");
+  current.style.display = "none";
+
+  target.classList.add("active");
+  target.style.display = "block";
+}
+
+prev.addEventListener("click", () => mover("prev"));
+next.addEventListener("click", () => mover("next"));
+
+    </script>
+</body>
+</html>
