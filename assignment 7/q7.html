@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function adder(parent, t, html, c) {
+        const ele = document.createElement(t);
+        ele.innerHTML = html;
+        ele.classList.add(c);
+        return parent.appendChild(ele);
+      }
+
+      const main = document.createElement("div");
+      main.style.width = "600px";
+      main.style.height = "400px";
+      main.style.border = "2px solid black";
+      main.style.position = "relative";
+      document.body.appendChild(main);
+
+      const box1 = adder(main, "div", "", "box");
+      const box2 = adder(main, "div", "", "box");
+
+      const info1 = adder(document.body, "div", "", "info");
+      const info2 = adder(document.body, "div", "", "info");
+
+      box1.style.background = "red";
+      box2.style.background = "blue";
+
+      document.querySelectorAll(".box").forEach((b) => {
+        b.style.width = "50px";
+        b.style.height = "50px";
+        b.style.position = "absolute";
+      });
+
+      const game = {
+        frame: 0,
+        box1: { x: 50, y: 50, w: 50, h: 50 },
+        box2: { x: 300, y: 200, w: 50, h: 50 },
+      };
+
+      const keyz = {
+        ArrowLeft: false,
+        ArrowRight: false,
+        ArrowUp: false,
+        ArrowDown: false,
+        KeyA: false,
+        KeyW: false,
+        KeyS: false,
+        KeyZ: false,
+      };
+
+      document.addEventListener("keydown", (e) => {
+        if (e.code in keyz) keyz[e.code] = true;
+      });
+
+      document.addEventListener("keyup", (e) => {
+        if (e.code in keyz) keyz[e.code] = false;
+      });
+
+      function mover() {
+        game.frame++;
+
+        if (keyz.ArrowLeft && game.box1.x > 0) game.box1.x--;
+        if (keyz.ArrowRight && game.box1.x + game.box1.w < main.clientWidth)
+          game.box1.x++;
+        if (keyz.ArrowUp && game.box1.y > 0) game.box1.y--;
+        if (keyz.ArrowDown && game.box1.y + game.box1.h < main.clientHeight)
+          game.box1.y++;
+
+        if (keyz.KeyZ && game.box2.x > 0) game.box2.x--;
+        if (keyz.KeyA && game.box2.x + game.box2.w < main.clientWidth)
+          game.box2.x++;
+        if (keyz.KeyW && game.box2.y > 0) game.box2.y--;
+        if (keyz.KeyS && game.box2.y + game.box2.h < main.clientHeight)
+          game.box2.y++;
+
+        box1.style.left = game.box1.x + "px";
+        box1.style.top = game.box1.y + "px";
+
+        box2.style.left = game.box2.x + "px";
+        box2.style.top = game.box2.y + "px";
+
+        info1.textContent = `Box1 → x:${game.box1.x} y:${game.box1.y} w:${game.box1.w} h:${game.box1.h}`;
+        info2.textContent = `Box2 → x:${game.box2.x} y:${game.box2.y} w:${game.box2.w} h:${game.box2.h}`;
+
+        if (
+          game.box1.x < game.box2.x + game.box2.w &&
+          game.box1.x + game.box1.w > game.box2.x &&
+          game.box1.y < game.box2.y + game.box2.h &&
+          game.box1.y + game.box1.h > game.box2.y
+        ) {
+          box1.style.background = "yellow";
+          box2.style.background = "yellow";
+        } else {
+          box1.style.background = "red";
+          box2.style.background = "blue";
+        }
+
+        requestAnimationFrame(mover);
+      }
+
+      mover();
+    </script>
+  </body>
+</html>
