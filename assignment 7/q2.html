@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Page Counters</title>
+</head>
+<body>
+
+  <button class="counter">Page 1: 0</button>
+  <button class="counter">Page 2: 0</button>
+  <button class="counter">Page 3: 0</button>
+
+  <script>
+    const buttons = document.querySelectorAll(".counter");
+
+    buttons.forEach(btn => btn.count = 0);
+
+    const incrementExpr = function () {
+      this.count++;
+      this.textContent = `Page 1: ${this.count}`;
+    };
+
+    const incrementArrow = (event) => {
+      const btn = event.target;
+      btn.count++;
+      btn.textContent = `Page 2: ${btn.count}`;
+    };
+
+    function incrementDecl() {
+      this.count++;
+      this.textContent = `Page 3: ${this.count}`;
+    }
+
+    buttons[0].addEventListener("click", incrementExpr);
+    buttons[1].addEventListener("click", incrementArrow);
+    buttons[2].addEventListener("click", incrementDecl);
+  </script>
+
+</body>
+</html>
