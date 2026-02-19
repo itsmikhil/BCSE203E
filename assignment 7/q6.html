@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const output = document.createElement("ol");
+      document.body.appendChild(output);
+
+      const btnFetch = document.createElement("button");
+      btnFetch.textContent = "Use Fetch";
+
+      const btnAsync = document.createElement("button");
+      btnAsync.textContent = "Use Async";
+
+      const btnAll = document.createElement("button");
+      btnAll.textContent = "PromiseAll";
+
+      document.body.append(btnFetch, btnAsync, btnAll);
+
+      function render(data) {
+        output.innerHTML = "";
+        data.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item.name;
+          output.appendChild(li);
+        });
+      }
+
+      /* 2. Fetch with then chaining */
+      btnFetch.onclick = function () {
+        fetch("data1.json")
+          .then((res) => res.json())
+          .then((data) => render(data));
+      };
+
+      /* 3. Async / Await */
+      btnAsync.onclick = async function () {
+        const res = await fetch("data1.json");
+        const data = await res.json();
+        render(data);
+      };
+
+      /* 4 & 5. Promise.all with multiple JSON files */
+      const files = ["data1.json", "data2.json", "data3.json"];
+
+      btnAll.onclick = function () {
+        Promise.all(
+          files.map((file) => fetch(file).then((res) => res.json())),
+        ).then((results) => {
+          output.innerHTML = "";
+          results.flat().forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item.name;
+            output.appendChild(li);
+          });
+        });
+      };
+    </script>
+  </body>
+</html>
