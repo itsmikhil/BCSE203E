@@ -1,35 +1,92 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import StudentResult from "./StudentResult";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [marks, setMarks] = useState("");
+  const [maxMarks, setMaxMarks] = useState("");
+
+  const [students, setStudents] = useState([]);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const newStudent = {
+      name: name,
+      subject: subject,
+      marks: parseInt(marks),
+      maxMarks: parseInt(maxMarks)
+    };
+
+    setStudents([...students, newStudent]);
+
+    setName("");
+    setSubject("");
+    setMarks("");
+    setMaxMarks("");
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="container">
+      <h1>College Result Portal</h1>
+
+      <form onSubmit={handleSubmit}>
+
+        <input
+          type="text"
+          placeholder="Student Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <br /><br />
+
+        <input
+          type="text"
+          placeholder="Subject"
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+        />
+
+        <br /><br />
+
+        <input
+          type="number"
+          placeholder="Marks"
+          value={marks}
+          onChange={(e) => setMarks(e.target.value)}
+        />
+
+        <br /><br />
+
+        <input
+          type="number"
+          placeholder="Max Marks"
+          value={maxMarks}
+          onChange={(e) => setMaxMarks(e.target.value)}
+        />
+
+        <br /><br />
+
+        <button type="submit">Add Student</button>
+
+      </form>
+
+      <h2>Student Results</h2>
+
+      {students.map((student, index) => (
+        <StudentResult
+          key={index}
+          name={student.name}
+          subject={student.subject}
+          marks={student.marks}
+          maxMarks={student.maxMarks}
+        />
+      ))}
+
+    </div>
+  );
 }
 
-export default App
+export default App;
