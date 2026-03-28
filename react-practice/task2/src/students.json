@@ -1,0 +1,52 @@
+[
+    {
+        "roll": 1,
+        "name": "Anita",
+        "class": "10A",
+        "marks": {
+            "Math": 80,
+            "Science": 85,
+            "English": 75
+        }
+    },
+    {
+        "roll": 2,
+        "name": "Rahul",
+        "class": "10A",
+        "marks": {
+            "Math": 60,
+            "Science": 55,
+            "English": 65
+        }
+    },
+    {
+        "roll": 3,
+        "name": "Kiran",
+        "class": "10A",
+        "marks": {
+            "Math": 30,
+            "Science": 88,
+            "English": 82
+        }
+    },
+    {
+        "roll": 4,
+        "name": "Meena",
+        "class": "10A",
+        "marks": {
+            "Math": 70,
+            "Science": 75,
+            "English": 60
+        }
+    },
+    {
+        "roll": 5,
+        "name": "Arjun",
+        "class": "10A",
+        "marks": {
+            "Math": 90,
+            "Science": 88,
+            "English": 82
+        }
+    }
+]
