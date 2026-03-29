@@ -1,0 +1,30 @@
+body{
+  position: relative;
+}
+.container1{
+  /* z-index: 1; */
+  position: absolute;
+  background-color: green;
+  height: 100px;
+  width: 100px;
+  transform: translate(250px,50px);
+}
+.container2{
+  /* z-index: 2; */
+  position: absolute;
+  background-color: blue;
+  height: 200px;
+  width: 200px;
+  transform: translate(200px,200px);
+}
+.container3{
+  /* z-index: 1; */
+  position: absolute;
+  background-color: red;
+  height: 300px;
+  width: 300px;
+
+}
+.active{
+  z-index: 1000;
+}
