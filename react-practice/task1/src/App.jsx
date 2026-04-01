@@ -1,10 +1,14 @@
 import { react, useState } from "react";
+import Edit from "./Edit";
 
 const App = () => {
   const [tasks, settasks] = useState([]);
   const [task, settask] = useState("");
   const [numOfTask, setnumOfTask] = useState(0);
   const [show, setshow] = useState("all");
+  const [editFlg, seteditFlg] = useState(0);
+  const [editIdx, seteditIdx] = useState(0);
+
   const handleAddTask = (e) => {
     e.preventDefault();
     settasks((prev) => [
@@ -27,8 +31,27 @@ const App = () => {
         return el;
       });
     });
-    console.log(tasks);
   };
+
+  const handleEditBefore=(id)=>{
+    seteditFlg(1);
+    seteditIdx(id);
+    settask(tasks[id].content); 
+  }
+  
+  const handleEditAfter=()=>{
+    let result=tasks.map((el)=>{
+      if(el.id===editIdx){
+        el.content=task;
+      }
+      return el;
+    })
+    settasks(result);
+    seteditFlg(0);
+    seteditIdx(0);
+    settask("");
+    
+  }
 
   const handleDelteTask = (id) => {
     settasks((prev) => prev.filter((el) => el.id != id));
@@ -73,10 +96,12 @@ const App = () => {
                 >
                   {el.content}
                 </h3>
+                <button onClick={() => handleEditBefore(el.id)}>Edit</button>
                 <button onClick={() => handleDelteTask(el.id)}>Delete</button>
               </div>
             );
           })}
+          {editFlg===1 && <Edit task={task} settask={settask} handleEditAfter={handleEditAfter}/>}
     </div>
   );
 };

@@ -1,3 +1,4 @@
+//npm install chart.js react-chartjs-2
 import {
   Chart as ChartJS,
   BarElement,
